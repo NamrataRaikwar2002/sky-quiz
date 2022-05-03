@@ -1,0 +1,28 @@
+.rule_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 2rem;
+
+}
+
+.rules_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background: var(--background-color);
+    padding: 4rem;
+}
+
+.start_btn {
+    width: 12rem;
+}
+
+.each_rule {
+    padding: 0.5rem;
+}
