@@ -1,0 +1,36 @@
+.card .category_img {
+    width: 25rem;
+    height: 20rem;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.category_img {
+    box-shadow: none;
+}
+
+.category_play_div {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.category_heading {
+    padding-top: 2rem;
+}
+
+
+.card:nth-last-child(-n+2){
+    opacity: 0.7;
+    pointer-events: none;
+}
