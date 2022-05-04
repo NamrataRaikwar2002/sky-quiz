@@ -1,0 +1,48 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7rem;
+    padding: 2rem;
+    box-shadow: var(--nav-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--bg-color);
+    gap: 2rem;
+    color: var(--primary-color);
+
+}
+
+.nav_rightside {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5rem;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.logoImg{
+    width: 4.5rem;
+}
+
+.nameWithLogo{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+@media screen and (max-width:360px){
+    .nav_rightside{
+        gap: 3rem;
+    }
+}
+
+@media screen and (max-width:330px){
+    .nav_rightside{
+        gap: 2rem;
+    }
+}

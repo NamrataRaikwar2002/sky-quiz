@@ -1,0 +1,26 @@
+.page_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    height: 16rem;
+    color: white;
+    padding: 4rem;
+    box-shadow: -9px -11px 11px -15px var(--shadow-color);
+}
+
+.fotter_icon {
+    color: white;
+    font-size: 2rem;
+}
+
+.footer_link_div {
+    display: flex;
+    gap: 4rem;
+}
+
+.footer_text {
+    display: flex;
+    gap: 2rem;
+}
