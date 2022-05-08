@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Navbar } from '../../Component'
-import './Authentication.css'
-import { useAuth } from '../../hooks/context/authContext'
-import { toast } from 'react-toastify'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar } from '../../Component';
+import './Authentication.css';
+import { useAuth } from '../../hooks/context/authContext';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
   const [inputType, setinputType] = useState({
