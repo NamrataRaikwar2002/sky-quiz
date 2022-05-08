@@ -34,7 +34,6 @@ body {
     background-color: var(--bg-color);
     font-family: sans-serif;
     font-size: 1.7rem;
-    font-weight: bold;
     min-height: 100vh;
     color: var(--text-color);
 }
@@ -69,7 +68,7 @@ body {
 .large_btn:hover {
     transform: var(--transform-scale);
 }
-
+.btn:hover,
 .nav_link:hover,
 .login_btn:hover,
 .number_play_btn:hover {
@@ -85,12 +84,17 @@ body {
     color: inherit;
 }
 
-input{
+input {
     outline: none;
 }
-.checkBox{
+
+.checkBox {
     width: 1.5rem;
     height: 1.5rem;
+    cursor: pointer;
+}
+
+.cursorPointer {
     cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
