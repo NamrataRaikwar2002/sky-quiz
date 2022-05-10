@@ -4,14 +4,17 @@ import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthContextProvider } from './hooks/context/authContext'
+import { QuizProvider } from './hooks/context/quizContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthContextProvider>
-        <App />
-      </AuthContextProvider>
+      <QuizProvider>
+        <AuthContextProvider>
+          <App />
+        </AuthContextProvider>
+      </QuizProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )
