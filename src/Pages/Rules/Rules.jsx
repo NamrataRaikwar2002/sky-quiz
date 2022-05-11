@@ -1,7 +1,6 @@
 import { Navbar } from '../../Component'
 import './Rules.css'
 import { useNavigate } from 'react-router'
-import { quizQuestion } from '../../data/quizQuestion'
 
 const Rules = () => {
   const navigate = useNavigate()
