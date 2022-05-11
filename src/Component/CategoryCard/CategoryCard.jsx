@@ -1,10 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './CategoryCard.css'
+import { useQuiz } from '../../hooks/context/quizContext'
 const CategoryCard = ({ categoryImg, categoryName, categoryId }) => {
   const navigate = useNavigate()
+  const {
+    quizDispatch,
+  } = useQuiz()
+
   const categoryCardHandler = (categoryId) => {
     navigate('/rules-page')
     sessionStorage.setItem('categoryId', categoryId)
+    quizDispatch({ type: 'RESET', payload: [] })
   }
 
   return (
