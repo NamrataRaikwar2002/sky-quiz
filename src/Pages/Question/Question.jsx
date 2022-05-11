@@ -21,17 +21,14 @@ const Question = () => {
     setQues(ques + 1)
   }
   const optionHandler = (optionValue, eachOption) => {
-    console.log(optionValue)
     setoptionToggle(optionValue)
     selectedOptions[ques] = optionValue
     quizDispatch({ type: 'SELECTED_OPTION', payload: [...selectedOptions] })
     if (eachOption.isRight) {
       quizDispatch({ type: 'CURRECT_ANS', payload: eachOption.value })
-      console.log(rightAnsArr)
     }
   }
 
-  console.log(selectedOptions)
   return (
     <main className="ques_page">
       <Navbar />
