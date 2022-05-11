@@ -1,0 +1,80 @@
+.ques_page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ques_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem;
+    height: auto;
+}
+
+.ques_div {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    width: 65rem;
+
+}
+
+.options {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    width: 100%;
+}
+
+.each_option {
+    border: 1px solid var(--indian-food-color);
+    width: inherit;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+
+}
+
+.each_option:hover {
+    cursor: pointer;
+    transform: var(--transform-scale);
+    background-color: var(--indian-food-color);
+}
+
+.ques_option_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.ques_header {
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+    background: var(--background-color);
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+    width: initial;
+
+}
+
+.selectedOption {
+    background-color: var(--indian-food-color);
+}
+
+@media screen and (max-width:500px) {
+    .ques_div {
+        width: auto;
+    }
+}

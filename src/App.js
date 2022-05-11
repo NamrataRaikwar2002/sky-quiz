@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { Category, Home, Login, Rules, Signup } from './Pages'
+import { Category, Home, Login, Question, Rules, Signup } from './Pages'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { RequiresAuth } from './RequiresAuth'
@@ -23,15 +23,30 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rules-page" element={<Rules />} />
         <Route path="/signup-page" element={<Signup />} />
         <Route path="/login-page" element={<Login />} />
+        <Route
+          path="/rules-page"
+          element={
+            <RequiresAuth>
+              <Rules />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/quiz/:quizId"
+          element={
+            <RequiresAuth>
+              <Question />
+            </RequiresAuth>
+          }
+        />
         <Route
           path="/category-page"
           element={
             <RequiresAuth>
               <Category />
-            </RequiresAuth> 
+            </RequiresAuth>
           }
         />
       </Routes>

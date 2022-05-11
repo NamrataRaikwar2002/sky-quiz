@@ -1,33 +1,28 @@
-import { areaImg, numberImg, percentageImg, speedDistanceImg } from "../../assests"
-import { CategoryCard, Navbar } from "../../Component"
+import { CategoryCard, Navbar } from '../../Component'
 import './Category.css'
+import { quizQuestion } from '../../data/quizQuestion'
 
 const Category = () => {
-    return(
-        <main className="category_page">
-        <Navbar />
-        <h2 className="category_heading page-heading">Select one and start playing</h2>
-            <section className="category_section">
-                <CategoryCard 
-                categoryImg={numberImg}
-                categoryName='Numbers'
-                />
-                 <CategoryCard 
-                categoryImg={percentageImg}
-                categoryName='Percentage'
-                />
-                 <CategoryCard 
-                categoryImg={areaImg}
-                categoryName='Area'
-                />
-                 <CategoryCard 
-                categoryImg={speedDistanceImg}
-                categoryName='Speed and Distance'
-                />
-            </section>
+  return (
+    <main className="category_page">
+      <Navbar />
+      <h2 className="category_heading page-heading">
+        Select one to start playing and, show you talent!!
+      </h2>
+      <section className="category_section">
+        {quizQuestion.map(({ categoryId, categoryName, categoryImg }) => {
+          return (
+            <CategoryCard
+              key={categoryId}
+              categoryId={categoryId}
+              categoryImg={categoryImg}
+              categoryName={categoryName}
+            />
+          )
+        })}
+      </section>
     </main>
-    )
-
+  )
 }
 
-export{Category}
+export { Category }
