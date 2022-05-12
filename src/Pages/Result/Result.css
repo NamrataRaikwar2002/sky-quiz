@@ -1,0 +1,30 @@
+.show_result {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background-color: var(--environment-color);
+    box-shadow: var(--box-shadow);
+}
+
+.correct_option {
+    background-color: var(--environment-color);
+}
+
+
+.wrong_option {
+    background-color: var(--wrong-option);
+}
+
+.resultOptions {
+    pointer-events: none;
+    border: 1px solid var(--indian-food-color);
+    width: inherit;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+}
+
+.not_attemted {
+    display: flex;
+    justify-self: flex-end;
+    padding: 1rem;
+    align-self: flex-end;
+}

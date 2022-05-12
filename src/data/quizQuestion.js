@@ -16,11 +16,11 @@ export const quizQuestion = [
         points: 10,
         options: [
           {
-            value: '4',
+            value: '14',
             isRight: false,
           },
           {
-            value: '3',
+            value: '13',
             isRight: false,
           },
           {
@@ -28,7 +28,7 @@ export const quizQuestion = [
             isRight: true,
           },
           {
-            value: '6',
+            value: '16',
             isRight: false,
           },
         ],
@@ -43,7 +43,7 @@ export const quizQuestion = [
             isRight: false,
           },
           {
-            value: '5',
+            value: '2',
             isRight: false,
           },
           {

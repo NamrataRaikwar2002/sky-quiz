@@ -97,6 +97,10 @@ input {
 .cursorPointer {
     cursor: pointer;
 }
+
+.not_attemted{
+    color: var(--animal-color);
+}
 @media screen and (max-width: 1000px) {
     html {
         font-size: 55%;

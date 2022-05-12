@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { Category, Home, Login, Question, Rules, Signup } from './Pages'
+import { Category, Home, Login, Question, Result, Rules, Signup } from './Pages'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { RequiresAuth } from './RequiresAuth'
@@ -46,6 +46,14 @@ function App() {
           element={
             <RequiresAuth>
               <Category />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/result-page"
+          element={
+            <RequiresAuth>
+              <Result />
             </RequiresAuth>
           }
         />
