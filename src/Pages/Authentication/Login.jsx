@@ -83,22 +83,12 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="forgot_password_div">
-              <input
-                type="checkbox"
-                name="1"
-                className="rememberme checkBox"
-                id="rememberMe"
-              />
-              <label htmlFor="rememberMe">Remember me</label>
-              <p>Forgot your Password?</p>
-            </div>
             <button
               type="submit"
               className="primary_btn btn"
               onClick={guestLoginHandler}
             >
-              Guest Login
+             Add Guest Credentials
             </button>
             <button
               type="submit"

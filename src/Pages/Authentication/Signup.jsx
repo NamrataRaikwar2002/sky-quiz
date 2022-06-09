@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../../Component';
 import './Authentication.css';
@@ -10,7 +10,7 @@ const Signup = () => {
     passwordType: 'password',
     confirmpaswd: 'password',
   })
-  const { signupUser, setuserInfo } = useAuth()
+  const { signupUser } = useAuth()
 
   const [signupUserInfo, setsignupUserInfo] = useState({
     firstName: '',
@@ -174,17 +174,6 @@ const Signup = () => {
                   )}
                 </div>
               }
-            </div>
-            <div className="forgot_password_div">
-              <input
-                type="checkbox"
-                name="1"
-                className="rememberme checkBox"
-                id="rememberMe"
-              />
-              <label htmlFor="rememberMe">
-                I accept all Terms & Conditions
-              </label>
             </div>
             <button
               type="submit"
