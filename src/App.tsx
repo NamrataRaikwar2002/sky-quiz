@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { Category, Home, Login, Question, Result, Rules, Signup } from './Pages'
@@ -62,4 +63,4 @@ function App() {
   )
 }
 
-export default App
+export {App};

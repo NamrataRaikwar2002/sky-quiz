@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navbar } from '../../Component'
 import './Rules.css'
 import { useNavigate } from 'react-router'

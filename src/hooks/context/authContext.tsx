@@ -1,26 +1,28 @@
-import { createContext, useContext, useId, useState } from 'react'
+import React from 'react';
+import { createContext, useContext, useState } from 'react'
 import { createUser } from '../../services/authService'
 import { toast } from 'react-toastify'
 import { signInUser } from '../../services/authService'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { AuthInitialState, AuthContextType } from './authContext.types';
 
-const AuthContext = createContext(null)
+const AuthContext = createContext({} as AuthContextType)
 const useAuth = () => useContext(AuthContext)
 
-const AuthContextProvider = ({ children }) => {
-  const [userInfo, setuserInfo] = useState({
-    token: localStorage.getItem('token') || '',
+const AuthContextProvider = ({ children } : any) => {
+  const [userInfo, setuserInfo] = useState<AuthInitialState >({
+    token: localStorage.getItem('token') || '', 
     user: localStorage.getItem('user') || '',
   })
-  const location = useLocation()
+
   const navigate = useNavigate()
   const [userEmail, setUserEmail] = useState(
     localStorage.getItem('userEmail') || '',
   )
 
-  const loginUser = async (email, password) => {
+  const loginUser = async (email:string, password:string) => {
     try {
-      const response = await signInUser(email, password)
+      const response:any= await signInUser(email, password)
       localStorage.setItem('token', response.user.accessToken)
       localStorage.setItem('user', response.user.uid)
       localStorage.setItem('userEmail', email)
@@ -30,17 +32,18 @@ const AuthContextProvider = ({ children }) => {
         user: response.user.uid,
       })
       setUserEmail(email)
-      navigate(location?.state?.form?.pathname || '/', { replace: true })
+      
+      navigate( '/', { replace: true })
       toast.success('Logged in Successfully')
-    } catch (error) {
+    } catch (error:any) {
       const errorMsg = error.message.match(/\/(\S+)[)]./i)[1].replace(/-/g, ' ')
       toast.error(errorMsg)
     }
   }
 
-  const signupUser = async (email, password) => {
+  const signupUser = async (email:string, password:string) => {
     try {
-      const response = await createUser(email, password)
+      const response:any = await createUser(email, password)
       navigate('/')
       toast.success(
         'Congratulation, your account has been successfully created.',
@@ -53,7 +56,7 @@ const AuthContextProvider = ({ children }) => {
         token: response.user.accessToken,
         user: response.user.uid,
       })
-    } catch (error) {
+    } catch (error:any) {
       const errorMsg = error.message.match(/\/(\S+)[)]./i)[1].replace(/-/g, ' ')
       toast.error(errorMsg)
     }

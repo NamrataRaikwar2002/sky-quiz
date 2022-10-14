@@ -1,10 +1,12 @@
+import React from 'react';
 import { useContext, createContext, useReducer } from 'react'
 import { quizReducer } from '../Reducer/quizReducer'
+import { QuizContext } from './quizContext.types';
 
-const quizContext = createContext(null)
+const quizContext = createContext({} as QuizContext)
 const useQuiz = () => useContext(quizContext)
 
-const QuizProvider = ({ children }) => {
+const QuizProvider = ({ children}:any ) => {
   const [quizState, quizDispatch] = useReducer(quizReducer, {
     rightAnsArr:[],
     selectedOptions: [],

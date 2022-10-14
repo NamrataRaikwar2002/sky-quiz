@@ -4,7 +4,9 @@ import {
   percentageImg,
   speedDistanceImg,
 } from '../../src/assests'
-export const quizQuestion = [
+import { QuizQuestion } from './quizQuestion.types'
+
+export const quizQuestion : QuizQuestion[] = [
   {
     categoryId: '1',
     categoryName: 'Number',
@@ -250,10 +252,12 @@ export const quizQuestion = [
     categoryId: '3',
     categoryName: 'Area',
     categoryImg: areaImg,
+    questions:[]
   },
   {
     categoryId: '4',
     categoryName: 'Speed and Distance',
     categoryImg: speedDistanceImg,
+    questions:[]
   },
 ]

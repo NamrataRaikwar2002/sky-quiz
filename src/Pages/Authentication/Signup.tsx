@@ -1,18 +1,21 @@
+import React from 'react';
 import {useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../../Component';
 import './Authentication.css';
 import { useAuth } from '../../hooks/context/authContext';
 import { toast } from 'react-toastify';
+import { InputType, SignupUserInfo } from './Authentication.types';
+
 
 const Signup = () => {
-  const [inputType, setinputType] = useState({
+  const [inputType, setinputType] = useState<InputType>({
     passwordType: 'password',
     confirmpaswd: 'password',
   })
   const { signupUser } = useAuth()
 
-  const [signupUserInfo, setsignupUserInfo] = useState({
+  const [signupUserInfo, setsignupUserInfo] = useState<SignupUserInfo>({
     firstName: '',
     lastName: '',
     email: '',
@@ -27,7 +30,7 @@ const Signup = () => {
     password,
     confirmPassword,
   } = signupUserInfo
-  const signupHandler = (e) => {
+  const signupHandler = (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     if (
       firstName !== '' &&
@@ -55,7 +58,7 @@ const Signup = () => {
 
   return (
     <main className="login_page">
-      <Navbar LoginOrSignup="Login" address="/login-page" />
+      <Navbar />
       <section className="login_box content">
         <form method="POST">
           <div className="login_div">

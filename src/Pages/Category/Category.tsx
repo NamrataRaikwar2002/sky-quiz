@@ -1,3 +1,4 @@
+import React from 'react';
 import { CategoryCard, Navbar } from '../../Component'
 import './Category.css'
 import { quizQuestion } from '../../data/quizQuestion'
