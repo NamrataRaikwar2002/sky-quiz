@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navbar, Footer } from '../../Component'
 import { Link } from 'react-router-dom'
 import './Home.css'

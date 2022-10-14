@@ -1,29 +1,31 @@
+import React from 'react';
 import { Navbar } from '../../Component'
 import { quizQuestion } from '../../data/quizQuestion'
 import { useState } from 'react'
 import './Question.css'
 import { Link } from 'react-router-dom'
 import { useQuiz } from '../../hooks/context/quizContext'
+import { Option } from '../../data/quizQuestion.types';
 
 const Question = () => {
   const quizId = sessionStorage.getItem('categoryId')
-  const [ques, setQues] = useState(0)
+  const [ques, setQues] = useState<number>(0)
   const [optionToggle, setoptionToggle] = useState('')
   const {
-    quizState: { rightAnsArr, selectedOptions },
+    quizState: { selectedOptions },
     quizDispatch,
   } = useQuiz()
   const categoryQues = quizQuestion.find(
     (eachCategory) => eachCategory.categoryId === quizId,
   )
-  const quesInCategory = categoryQues.questions
+  const quesInCategory = categoryQues?.questions
   const nextQuesHandler = () => {
     setQues(ques + 1)
   }
-  const optionHandler = (optionValue, eachOption) => {
+  const optionHandler = (optionValue:string, eachOption:Option) => {
     setoptionToggle(optionValue)
     selectedOptions[ques] = optionValue
-    quizDispatch({ type: 'SELECTED_OPTION', payload: [...selectedOptions] })
+    quizDispatch({ type: 'SELECTED_OPTION', payload: [...selectedOptions as []] })
     if (eachOption.isRight) {
       quizDispatch({ type: 'CURRECT_ANS', payload: eachOption.value })
     }
@@ -41,7 +43,7 @@ const Question = () => {
             <div className="ques_option_div">
               <h3>{`Q${ques + 1}: ${quesInCategory[ques].question}`}</h3>
               <div className="options">
-                {quesInCategory[ques].options.map((eachOption) => (
+                {quesInCategory[ques].options.map((eachOption: any) => (
                   <label
                     className={`each_option ${
                       optionToggle === eachOption.value

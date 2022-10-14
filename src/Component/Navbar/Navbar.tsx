@@ -1,3 +1,4 @@
+import React from 'react';
 import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/context/authContext'
@@ -7,7 +8,7 @@ import { logoutUser } from '../../services/authService'
 const Navbar = () => {
   const {
     userInfo: { token, user },
-    setuserInfo,
+    setuserInfo, 
   } = useAuth()
   const navigate = useNavigate()
   const userEmail = localStorage.getItem('userEmail')

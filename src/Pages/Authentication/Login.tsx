@@ -1,21 +1,23 @@
+import React from 'react';
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Component'
 import './Authentication.css'
 import { useAuth } from '../../hooks/context/authContext'
 import { toast } from 'react-toastify'
+import { LoginUserInfo } from './Authentication.types';
 
 const Login = () => {
-  const [inputType, setinputType] = useState('password')
-  const [loginUserInfo, setloginUserInfo] = useState({
+  const [inputType, setinputType] = useState<string>('password')
+  const [loginUserInfo, setloginUserInfo] = useState<LoginUserInfo>({
     email: '',
     password: '',
   })
-  const { loginUser } = useAuth()
+  const { loginUser } = useAuth();
 
   const { email, password } = loginUserInfo
 
-  const loginHandler = (e) => {
+  const loginHandler = (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     if (email !== '' && password !== '') {
       loginUser(email, password)
@@ -23,14 +25,14 @@ const Login = () => {
       toast.warning('Please fill the fields')
     }
   }
-  const guestLoginHandler = (e) => {
+  const guestLoginHandler = (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     setloginUserInfo({ email: 'admin@gmail.com', password: 'admin123' })
   }
 
   return (
     <main className="login_page">
-      <Navbar LoginOrSignup="Signup" address="/signup-page" />
+      <Navbar />
       <section className="login_box content">
         <form>
           <div className="login_div">

@@ -5,11 +5,11 @@ import {
   signOut
 } from '../firebase.config'
 
-const signInUser = async (email, password) => {
+const signInUser = async (email:string, password:string) => {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
-const createUser = async (email, password) => {
+const createUser = async (email:string, password:string) => {
   return await createUserWithEmailAndPassword(auth, email, password)
 }
 

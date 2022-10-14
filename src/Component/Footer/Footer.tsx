@@ -1,3 +1,4 @@
+import React from 'react';
 import './Footer.css'
 
 const Footer = () => {
@@ -9,16 +10,16 @@ const Footer = () => {
         <p>Your Account</p>
       </div>
       <div className="footer_link_div">
-        <a target='_blank' href="https://github.com/NamrataRaikwar2002" className="footer_link">
+        <a target='_blank' rel="noreferrer" href="https://github.com/NamrataRaikwar2002" className="footer_link">
           <i className="fa-brands fa-github fotter_icon"></i>
         </a>
-        <a target='_blank'
+        <a target='_blank' rel="noreferrer"
           href="https://www.linkedin.com/in/namrata-raikwar-727951224/"
           className="footer_link"
         >
           <i className="fa-brands fa-linkedin fotter_icon"></i>
         </a>
-        <a target='_blank'
+        <a target='_blank' rel="noreferrer"
           href="https://twitter.com/RaikwarNamrata?t=plsVpPoUgAtlfzgO6Uvvsw&s=03"
           className="footer_link"
         >
@@ -28,5 +29,4 @@ const Footer = () => {
     </footer>
   )
 }
-
 export { Footer }

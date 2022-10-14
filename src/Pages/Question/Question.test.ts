@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { quizReducer } from "../../hooks/Reducer/quizReducer";
 
 const initialState = {

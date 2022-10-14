@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navbar } from '../../Component'
 import './Result.css'
 import { quizQuestion } from '../../data/quizQuestion'
@@ -9,9 +10,9 @@ const Result = () => {
     (category) => category.categoryId === quizId,
   )
   const {
-    quizState: { rightAnsArr, selectedOptions },
+    quizState:  { rightAnsArr, selectedOptions },
   } = useQuiz()
-  const checkAnswer = (optionValue, index) => {
+  const checkAnswer = (optionValue:string, index:number) => {
     if (selectedOptions[index]) {
       if (selectedOptions[index] === optionValue) {
         return true
@@ -30,21 +31,21 @@ const Result = () => {
         <h2>Your Result</h2>
         <div className="show_result">
           <h2>{`${
-            rightAnsArr.length * 10 > 20
+          rightAnsArr.length * 10 > 20
               ? 'Congratulation! 🎉 Your final score is :'
               : 'Try it again 🙃 Your final score is :'
           } ${rightAnsArr.length * 10}/${
-            correctOptions.questions.length * 10
+            correctOptions?.questions?.length * 10
           }`}</h2>
         </div>
         <div className="ques_div">
           <header className="ques_header">
-            <h3>{`Question:${correctOptions.questions.length}/${correctOptions.questions.length}`}</h3>
+            <h3>{`Question:${correctOptions?.questions.length}/${correctOptions?.questions.length}`}</h3>
             <h3>{`Score: ${rightAnsArr.length * 10}/${
-              correctOptions.questions.length * 10
+              correctOptions?.questions.length * 10
             }`}</h3>
           </header>
-          {correctOptions.questions.map((eachQuestion, index) => {
+          {correctOptions?.questions.map((eachQuestion: { question: React.Key | null | undefined; options: any[]; }, index:number) => {
             return (
               <div className="ques_option_div" key={eachQuestion.question}>
                 <h3>{`Q.${index + 1}: ${eachQuestion.question}`}</h3>
@@ -61,7 +62,7 @@ const Result = () => {
                         className={` resultOptions ${
                           eachOption.isRight && 'correct_option'
                         } ${
-                          checkAnswer(eachOption.value, index, eachOption) &&
+                          checkAnswer(eachOption.value, index) &&
                           !eachOption.isRight
                             ? 'wrong_option'
                             : ''
