@@ -75,11 +75,11 @@ const Login = () => {
               >
                 {inputType === 'text' ? (
                   <p className="hideIcon">
-                    <i className="fa-regular fa-eye"></i>
+                    <i className="fa-regular fa-eye" data-testid='openEyeIcon'></i>
                   </p>
                 ) : (
                   <p className="hideIcon">
-                    <i className="fa-regular fa-eye-slash"></i>
+                    <i className="fa-regular fa-eye-slash" data-testid='closeEyeIcon'></i>
                   </p>
                 )}
               </div>
@@ -96,6 +96,7 @@ const Login = () => {
               type="submit"
               className="primary_btn btn"
               onClick={loginHandler}
+              data-testid='loginFormButton'
             >
               Login
             </button>

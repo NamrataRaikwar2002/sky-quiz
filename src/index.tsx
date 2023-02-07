@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import { QuizProvider } from "./hooks/context/quizContext";
 import { AuthContextProvider } from "./hooks/context/authContext";
 import {App} from './App';
-// const {App} = require('./App')
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

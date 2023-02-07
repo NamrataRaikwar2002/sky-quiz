@@ -131,11 +131,11 @@ const Signup = () => {
               >
                 {inputType.passwordType === 'text' ? (
                   <p className="hideIcon">
-                    <i className="fa-regular fa-eye"></i>
+                    <i className="fa-regular fa-eye" data-testid='openEyeIcon'></i>
                   </p>
                 ) : (
                   <p className="hideIcon">
-                    <i className="fa-regular fa-eye-slash"></i>
+                    <i className="fa-regular fa-eye-slash" data-testid='closeEyeIcon'></i>
                   </p>
                 )}
               </div>

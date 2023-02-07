@@ -8,7 +8,7 @@ type CategoryCardProps = {
   categoryImg:  string,
   categoryName: string,
   categoryId: string
-}
+};
 
 const CategoryCard = ({ categoryImg, categoryName, categoryId } : CategoryCardProps) => {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ const CategoryCard = ({ categoryImg, categoryName, categoryId } : CategoryCardPr
   }
 
   return (
-    <div className="card" onClick={() => categoryCardHandler(categoryId)}>
+    <div className="card" onClick={() => categoryCardHandler(categoryId)} data-testid='categoryCard'>
       <Link to="/rules-page" className="text-link">
         <img src={categoryImg} alt="number img" className="category_img" />
         <div className="category_play_div">
