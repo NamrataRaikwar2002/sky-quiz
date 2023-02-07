@@ -6,11 +6,11 @@ import { QuizContext } from './quizContext.types';
 const quizContext = createContext({} as QuizContext)
 const useQuiz = () => useContext(quizContext)
 
+export const initialquizState = { rightAnsArr:[],
+  selectedOptions: [],}
+
 const QuizProvider = ({ children}:any ) => {
-  const [quizState, quizDispatch] = useReducer(quizReducer, {
-    rightAnsArr:[],
-    selectedOptions: [],
-  })
+  const [quizState, quizDispatch] = useReducer(quizReducer, initialquizState)
   return (
     <quizContext.Provider value={{ quizState, quizDispatch }}>
       {children}
@@ -18,4 +18,4 @@ const QuizProvider = ({ children}:any ) => {
   )
 }
 
-export { useQuiz, QuizProvider }
+export { useQuiz, QuizProvider, quizContext }

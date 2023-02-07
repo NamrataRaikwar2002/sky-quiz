@@ -10,7 +10,7 @@ const Home = () => {
       <section className="home_section">
         <h1 className="heading">Let's Play</h1>
         <h3 className="page-heading">Select one to Start</h3>
-        <div className="featured_category">
+        <div className="featured_category" >
           <Link to="/category-page" className="each_category">
             Maths<i className="fa-solid fa-lock-open"></i>
           </Link>

@@ -9,11 +9,13 @@ import { AuthInitialState, AuthContextType } from './authContext.types';
 const AuthContext = createContext({} as AuthContextType)
 const useAuth = () => useContext(AuthContext)
 
+const initialUserInfo = {
+  token: localStorage.getItem('token') || '', 
+  user: localStorage.getItem('user') || '',
+}
+
 const AuthContextProvider = ({ children } : any) => {
-  const [userInfo, setuserInfo] = useState<AuthInitialState >({
-    token: localStorage.getItem('token') || '', 
-    user: localStorage.getItem('user') || '',
-  })
+  const [userInfo, setuserInfo] = useState<AuthInitialState >(initialUserInfo)
 
   const navigate = useNavigate()
   const [userEmail, setUserEmail] = useState(
@@ -76,4 +78,4 @@ const AuthContextProvider = ({ children } : any) => {
   )
 }
 
-export { useAuth, AuthContextProvider }
+export { useAuth, AuthContextProvider, AuthContext, initialUserInfo }
