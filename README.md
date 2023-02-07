@@ -37,6 +37,8 @@
   - React Router
   - [CheckMate-UI](https://objective-lewin-a1ee76.netlify.app/)
   - Font Awesome
+  - TypeScript
+  - React Testing Library
 
 ## Preview
 
