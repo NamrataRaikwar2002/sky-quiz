@@ -22,26 +22,27 @@ const MockNavbar = () => {
   );
 };
 
+beforeEach(() => {
+  render(   <MockNavbar />)
+})
 
 describe("testing navbar", () => {
   test("should open login page when clicking on login button", () => {
-    render(
-        <MockNavbar />
-    );
+    // render(
+    //     <MockNavbar />
+    // );
     const loginButton = screen.getByRole("button", { name: /Login/i });
     fireEvent.click(loginButton);
     expect(window.location.pathname).toBe("/login-page");
   });
 
   test('should present all routes in navbar', () => {
-    render(<MockNavbar/>)
     const linkElement = screen.getAllByRole('link');
     expect(linkElement.length).toEqual(4)
 
   })
 
   test('should got to category page when clicking on category', () =>{
-    render(<MockNavbar/>)
     const categoryLink = screen.getByText('Category');
     fireEvent.click(categoryLink)
     expect(window.location.pathname).toBe('/category-page');
