@@ -28,16 +28,18 @@ const MockCategory = ({
   );
 };
 
+beforeEach(() => {
+  render(<MockCategory categoryImg="" categoryName="" categoryId="" />)
+})
+
 
 describe("categorycard testing", () => {
   test("image should be in component", () => {
-    render(<MockCategory categoryImg="" categoryName="" categoryId="" />);
     const imgElement = screen.getByRole("img");
     expect(imgElement).toBeInTheDocument();
   });
 
   test('should go to rules page when click on category', () => {
-    render(<MockCategory categoryImg="" categoryName="" categoryId="" />);
     const categoryCardElement = screen.getByTestId('categoryCard');
     fireEvent.click(categoryCardElement);
     expect(window.location.pathname).toBe('/rules-page');

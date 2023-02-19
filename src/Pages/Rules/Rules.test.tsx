@@ -24,22 +24,23 @@ const MockRules = () => {
 
   const quizId = sessionStorage.getItem('categoryId');
 
+ beforeEach(() => {
+  render(<MockRules/>)
+ })
+
 describe('testing Rules', () => {
     test('start button should start the ', () => {
-        render(<MockRules/>);
         const startButton = screen.getByRole('button', {name:/Start/i});
         expect(startButton).toBeInTheDocument();
     })
 
     test('start button should start the ', () => {
-        render(<MockRules/>);
         const startButton = screen.getByRole('button', {name:/Start/i});
         fireEvent.click(startButton);
         expect(window.location.pathname).toBe(`/quiz/${quizId}`);
     })
 
     test("should present heading", () => {
-        render(<MockRules/>);
         const headingElement = screen.getByRole('heading', {name:/Rules/i})
         expect(headingElement).toBeInTheDocument();
     })
